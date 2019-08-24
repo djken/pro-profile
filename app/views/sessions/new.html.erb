@@ -1,0 +1,15 @@
+<div class="container d-flex justify-content-center mt-5">
+        <%# Register form %>
+        <div class="card nav-move" style="width:30rem";>
+            <div class="card-header text-center font-weight-bold">Log In</div>
+            <%# Username form %>
+                <div class="card-body text-center">
+                    <%= bootstrap_form_for(:user, url: new_session_path) do |form| %>
+                        <%= form.text_field :email, label: 'E-mail', class: 'text-center' %>
+                        <%= form.password_field :password, class: 'text-center' %>
+                        <%= form.primary "Log In" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+</div>
