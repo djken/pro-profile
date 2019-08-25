@@ -1,9 +1,18 @@
 class UsersController < ApplicationController 
-    skip_before_action :only_signed_in, only: [:new, :create, :confirm]
+    skip_before_action :only_signed_in, only: [:new, :create, :confirm, :show]
     before_action :only_signed_out, only:[:new, :create, :confirm]
 
     def new 
         @user = User.new
+    end
+
+    def index
+        @users = User.all
+        @user = User.find_by(params[:id])
+        # render json:@user.to_json
+    end
+    def show
+        @user = User.find(params[:id])
     end
 
     def create

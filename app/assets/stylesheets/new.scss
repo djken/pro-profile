@@ -1,5 +1,5 @@
 body{
-    background: -webkit-linear-gradient(left, #cbc9eb, #aedae6);
+    background: -webkit-linear-gradient(left, #e5e4f3, #b8cdd3);
 }
 .emp-profile{
     padding: 3%;
@@ -9,7 +9,7 @@ body{
     background: #fff;
 }
 .profile-img{
-    text-align: center;
+    text-align: left;
 }
 .profile-img img{
     width: 70%;
@@ -93,7 +93,3 @@ body{
     font-weight: 600;
     color: #0062cc;
 }
-
-.textarea {
-    height: 150px;
-  }
