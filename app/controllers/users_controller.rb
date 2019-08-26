@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     def create
         user_params = params.require(:user).permit(:fullname, :profession, :email, :phone, :description, :password, :password_confirmation)
         @user = User.new(user_params)
-
+        # render json:@user.to_json
         if @user.valid?
             @user.save
             redirect_to login_path, success: "Your account has been created, you should receive an email to confirm your account."
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
     def confirm
         @user = User.find(params[:id])
-
         if @user.confirmation_token == params[:token]
             # @user.update_attributes(confirmed: true, confirmation_token: nil)
             # @user.save(validate: false)
