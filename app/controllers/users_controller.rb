@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
             redirect_to login_path, success: "Your account has been created, you should receive an email to confirm your account."
-        else 
+        else
             render 'new'
         end
     end
