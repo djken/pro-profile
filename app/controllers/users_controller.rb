@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-        @user = User.find_by(params[:id])
+        # @user = User.find_by(params[:id])
         # render json:@user.to_json
     end
     def show
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
             # @user.update_attributes(confirmed: true, confirmation_token: nil)
             # @user.save(validate: false)
             session[:auth] = @user.to_session
-            redirect_to groups_path, success: 'Your account has been confirmed!'
+            redirect_to users_path, success: 'Your account has been confirmed!'
         else
             redirect_to new_user_path, danger: 'This token is not valid!'
         end
