@@ -4,12 +4,13 @@
                 <% @users.each do |user| %>
                 <div class="col-md-6 pt-4">
                     <div class="d-flex flex-row border rounded">
-                        <div class="p-0 w-25">
-                            <img src="https://c1.staticflickr.com/3/2862/12328317524_18e52b5972_k.jpg" class="img-thumbnail border-0" />
+                        <div class="p-0 w-15">
+                            <!-- <img src="https://c1.staticflickr.com/3/2862/12328317524_18e52b5972_k.jpg" class="img-thumbnail border-0" /> -->
+                            <%= image_tag(user.image, size:  '200', border: 'rounded' ) %>
                         </div>
                         <div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
-                                <h4 class="text-primary"><%= user.fullname %></h4>
-                                <h5 class="text-info"><%= user.profession %></h5>
+                                <h4 class="text-primary"><%= user.firstname %><%= user.lastname %></h4>
+                                <h5 class="text-info"><%= user.email %></h5>
                                 <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
                                     <li><a href=""><i class="fab fa-facebook-square"></i> Facebook</li></a>
                                     <li><a href=""><i class="fab fa-twitter-square"></i> Twitter</li></a>

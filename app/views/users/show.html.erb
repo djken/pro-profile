@@ -1,26 +1,20 @@
-<div class="container emp-profile">
-    <%# @users.each do |pro| %>
-            <div class="row">
-                <div class="col-md-4">
+<div class=" col-lg-12 card py-2 text-center font-weight-bold"> <%= @user.lastname %> </div>
+<div class="container emp-profile card-header  card-body  font-weight-bold pt-4">
+            <div class="row pt-2">
+                <div class="col-md-4 text-center">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
-
+                    <%= image_tag(@user.image, class: 'w-2') %>
                     <div class="profile-head">
-                         Name: <h6><%= @user.fullname %></h6>
-                         Profession:<h6> <%= @user.profession %></h6>
+                         Firstname: <h6><%= @user.firstname %></h6>
+                         Lastname: <h6><%= @user.lastname %></h6>
                          Email: <h6><%= @user.email %></h6>
-                         Phone: <h6><%= @user.phone %></h6>
                     </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="profile-head border rounded">
                         <u><h5>Description</h5></u>
-                        <p><%= @user.description %></p>
+                        <p><%#= @user.description %></p>
                     </div>
                 </div>
                 <div class="col-md-2">

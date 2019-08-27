@@ -9,12 +9,12 @@ class ApplicationController < ActionController::Base
 
     def only_signed_in
         if !user_signed_in?
-            redirect_to  new_user_path, danger: 'You do not have right to connect!'
+            # redirect_to  new_user_path, danger: 'You do not have right to connect!'
         end
     end
 
     def only_signed_out
-        redirect_to user_path if user_signed_in?
+        redirect_to users_path if user_signed_in?
     end
 
     def user_signed_in?

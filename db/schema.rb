@@ -10,27 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_021516) do
+ActiveRecord::Schema.define(version: 2019_08_27_020126) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "personal"
-    t.string "business"
-    t.integer "user_id"
+    t.string "phone"
+    t.string "address"
+    t.string "profession"
+    t.string "skill"
+    t.string "fabooklink"
+    t.string "twitterlink"
+    t.string "githublink"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "fullname"
-    t.string "profession"
+    t.string "username"
+    t.string "firstname"
+    t.string "lastname"
     t.string "email"
-    t.string "phone"
-    t.string "description"
-    t.boolean "confirmed", default: false
-    t.string "confirmation_token"
     t.string "password_digest"
-    t.boolean "avatar", default: false
+    t.string "confirmation_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
