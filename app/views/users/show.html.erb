@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <% if @user.profile %>
+                    <% if @user.profile && current_user && @user.id == current_user.id %>
                         <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn" %>
                     <% end %>
                 </div>
