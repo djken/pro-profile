@@ -14,11 +14,15 @@
                 <div class="col-md-4">
                     <div class="profile-head border rounded">
                         <u><h5>Description</h5></u>
-                        <p><%#= @user.description %></p>
+                        <p><%= @user.profile.description %></p>
+                        <p><%= @user.profile.phone %></p>
+                        <p><%= @user.profile.profession %></p>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    <% if @user.profile %>
+                        <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn" %>
+                    <% end %>
                 </div>
             </div>
         <%# end %>

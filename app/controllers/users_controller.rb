@@ -21,6 +21,8 @@ class UsersController < ApplicationController
         # render json:@user.to_json
         if @user.valid?
             @user.save
+            @user_id = User.find(@user.id)
+            Profile.create(user_id: @user_id.id)
             redirect_to login_path, success: "Your account has been created, you should receive an email to confirm your account."
         else
             render 'new'
