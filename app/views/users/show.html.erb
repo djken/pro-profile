@@ -1,45 +1,40 @@
 <div class=" col-lg-12 card py-2 text-center font-weight-bold"> <%= @user.lastname %> </div>
+
 <div class="container emp-profile card-header  card-body  font-weight-bold pt-4">
-            <div class="row pt-2">
+            <div class="row pt-1">
                 <div class="col-md-4 text-center">
-                    <div class="profile-img">
-                    <%= image_tag(@user.image, class: 'w-2') %>
-                    <div class="profile-head">
-                         Firstname: <h6><%= @user.firstname %></h6>
-                         Lastname: <h6><%= @user.lastname %></h6>
-                         Email: <h6><%= @user.email %></h6>
+                    <%= image_tag(@user.image) %>
+                    <div class="profile-img text-center border-right">
+                    <div class="profile-head w-2">
+                         Firstname <h6><%= @user.firstname %></h6><hr>
+                         Lastname <h6><%= @user.lastname %></h6> <hr>
+                         Email <h6><%= @user.email %></h6> <hr>
+                         Address <h6><%= @user.profile.address %></h6> <hr>
+                         Phone  <h6><%= @user.profile.phone %></h6> <hr>
+                         Profession  <h6><%= @user.profile.profession %></h6> <hr>
                     </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="profile-head border rounded">
-                        <u><h5>Description</h5></u>
-                        <p><%= @user.profile.description %></p>
-                        <p><%= @user.profile.phone %></p>
-                        <p><%= @user.profile.profession %></p>
+                <div class="col-md-6">
+                    <div class="bg-color text-center">
+                        Github  <%= @user.profile.githublink %> <hr>
+                        Skills  <h6><%= @user.profile.skill %></h6> <hr>
+                        Facebook <h6><%= @user.profile.fabooklink %></h6> <hr>
+                        Twitter  <h6><%= @user.profile.twitterlink %></h6> <hr>
                     </div>
+                    <br>
+                    <br>
+                    <div class="profile-head border rounded text-center">
+                            <u><h6>Description</h6></u>
+                            <div class="card-body card text-justify spaceletter p-2">
+                                <%= @user.profile.description %>
+                            </div>
+                        </div>
                 </div>
-                <div class="col-md-2">
-                    <% if @user.profile && current_user && @user.id == current_user.id %>
-                        <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn" %>
-                    <% end %>
-                </div>
+                    <div class="col-md-2 text-center btn-edit-middle">
+                            <% if @user.profile && current_user && @user.id == current_user.id %>
+                            <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn col-sm-12" %>
+                            <% end %>
+                    </div>
             </div>
-        <%# end %>
-            <!-- <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-work">
-                        <p>WORK LINK</p>
-                        <a href="">Website Link</a><br/>
-                        <a href="">Bootsnipp Profile</a><br/>
-                        <a href="">Bootply Profile</a>
-                        <p>SKILLS</p>
-                        <a href="">Web Designer</a><br/>
-                        <a href="">Web Developer</a><br/>
-                        <a href="">WordPress</a><br/>
-                        <a href="">WooCommerce</a><br/>
-                        <a href="">PHP, .Net</a><br/>
-                    </div>
-                </div>
-            </div> -->
     </div>

@@ -4,36 +4,21 @@
             <div class="col-lg-4">
                 <%= bootstrap_form_for @profile do |form| %>
                 <div class="profile-head pt-2">
-                    <%#= form.text_field :username, hide_label: true, placeholder: 'Username', class: 'text-left font-weight-normal' %>
-                    <%#= form.text_field :firstname, hide_label: true, placeholder: 'Firstname', class: 'text-left font-weight-normal' %>
-                    <%#= form.text_field :lastname, hide_label: true, placeholder: 'Lastname', class: 'text-left font-weight-normal' %>
-                    <%#= form.email_field :email, hide_label: true, placeholder: 'E-mail', class: 'text-left font-weight-normal' %>
-                    <%#= form.password_field :password, hide_label: true, placeholder: 'Password', class: 'text-left font-weight-normal' %>
-                    <%#= form.password_field :password_confirmation, hide_label: true, placeholder: 'Confirm Password', class: 'text-left font-weight-normal' %>
+                    <%= form.text_field :address, hide_label: true, placeholder: 'Address', class: 'text-left form-control' %>
                     <%= form.text_field :profession, hide_label: true, placeholder: 'Profession', class: 'text-left font-weight-normal' %>
                     <%= form.text_field :phone, hide_label: true, placeholder: 'Phone', class: 'text-left font-weight-normal' %>
-                    <%= form.text_area :description, hide_label: true, placeholder: 'Write something about you ...', class: 'text-left' %>
                 </div>
             </div>
-            <div class="col-lg-4 text-center">
 
-            </div>
+         <div class="col-lg-4 text-center pt-2">
+                <%= form.url_field :githublink, hide_label: true, placeholder: 'Paste your Github repo url ...', class: 'text-left form-control' %>
+                <%= form.url_field :fabooklink, hide_label: true, placeholder: 'Paste your Facebook url ...', class: 'text-left form-control' %>
+                <%= form.url_field :twitterlink, hide_label: true, placeholder: 'Paste your Twitter url ...', class: 'text-left form-control' %>
+        </div>
+
         <div class="col-lg-4 mt-2">
-                <div class="profile-img text-center">
-                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                    <div class="file btn btn-lg btn-primary">
-                        Add Photo
-                        <input type="file" name="file"/>
-                    </div>
-                    <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                    </div>
-                </div>
+                <%= form.text_field :skill, hide_label: true, placeholder: 'Add Your Skills...', class: 'text-left form-control' %>
+                <%= form.text_area :description, hide_label: true, placeholder: 'Write something about you ...', class: 'text-left form-control' %>
         </div>
     </div> 
     <div class="col-lg-12  text-center"><%= form.primary "Register" %></div>
