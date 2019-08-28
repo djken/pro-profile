@@ -17,19 +17,26 @@
                 </div>
                 <div class="col-md-6">
                     <div class="bg-color text-center">
-                        Github  <%= @user.profile.githublink %> <hr>
-                        Skills  <h6><%= @user.profile.skill %></h6> <hr>
-                        Facebook <h6><%= @user.profile.fabooklink %></h6> <hr>
-                        Twitter  <h6><%= @user.profile.twitterlink %></h6> <hr>
+                        Github  <a href="<%= @user.profile.githublink %>">Visit Github Repo</a> <hr>
+                        Facebook <a href="<%= @user.profile.fabooklink %>">Visit Facebook Page</a> <hr>
+                        Twitter  <a href="<%= @user.profile.twitterlink %>">Follow on Twitter</a> <hr>
+                    </div>
+                    
+                    <br>
+                    <div class="profile-head border rounded text-center">
+                            <u><h6>List Your Skills</h6></u>
+                            <div class="card-body card text-justify spaceletter p-2">
+                                <%= @user.profile.skill %>
+                            </div>
                     </div>
                     <br>
-                    <br>
+                    
                     <div class="profile-head border rounded text-center">
                             <u><h6>Description</h6></u>
                             <div class="card-body card text-justify spaceletter p-2">
                                 <%= @user.profile.description %>
                             </div>
-                        </div>
+                    </div>
                 </div>
                     <div class="col-md-2 text-center btn-edit-middle">
                             <% if @user.profile && current_user && @user.id == current_user.id %>
