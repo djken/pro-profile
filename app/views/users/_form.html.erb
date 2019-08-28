@@ -18,7 +18,7 @@
                     <%= form.password_field :password_confirmation, hide_label: true, placeholder: 'Confirm Password', class: 'text-left form-control' %> <br>
                 </div>
                 <div class="">
-                    <%= form.file_field :image, class: 'border rounded' %>
+                    <%= form.file_field :image, class: 'border rounded img-thumbnail', resize: '300'%>
                 </div>
             </div>
             <div class="col-lg-4 text-center">

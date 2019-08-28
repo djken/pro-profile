@@ -1,11 +1,10 @@
 <div class=" col-lg-12 card py-2 text-center font-weight-bold"> <%= @user.lastname %> </div>
 
-<div class="container emp-profile card-header  card-body  font-weight-bold pt-4">
+<div class="container emp-profile  card-body card-header font-weight-bold pt-4">
             <div class="row pt-1">
                 <div class="col-md-4 text-center">
-                    <%= image_tag(@user.image) %>
                     <div class="profile-img text-center border-right">
-                    <div class="profile-head w-2">
+                    <div class="profile-head w-2 font-weight-normal">
                          Firstname <h6><%= @user.firstname %></h6><hr>
                          Lastname <h6><%= @user.lastname %></h6> <hr>
                          Email <h6><%= @user.email %></h6> <hr>
@@ -16,10 +15,10 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="bg-color text-center">
-                        Github  <a href="<%= @user.profile.githublink %>">Visit Github Repo</a> <hr>
-                        Facebook <a href="<%= @user.profile.fabooklink %>">Visit Facebook Page</a> <hr>
-                        Twitter  <a href="<%= @user.profile.twitterlink %>">Follow on Twitter</a> <hr>
+                    <div class="bg-color text-center font-weight-normal">
+                        <h6 class="mt-0">Github </h6><a href="<%= @user.profile.githublink %>">Visit Github Repo</a> <hr>
+                        <h6 class="mt-0">Facebook</h6><a href="<%= @user.profile.fabooklink %>">Visit Facebook Page</a> <hr>
+                        <h6 class="mt-0">Twitter</h6><a href="<%= @user.profile.twitterlink %>">Follow on Twitter</a> <hr>
                     </div>
                     
                     <br>
@@ -38,7 +37,14 @@
                             </div>
                     </div>
                 </div>
-                    <div class="col-md-2 text-center btn-edit-middle">
+                    <div class="col-md-1 img-fluid">
+                            <%#= image_tag(@user.image) %>
+                            <%#= image_tag (@user.image) %>
+                            <%= image_tag @user.image.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'}) %>
+
+
+                    </div>
+                    <div class="col-md text-center btn-edit-middle">
                             <% if @user.profile && current_user && @user.id == current_user.id %>
                             <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn col-sm-12" %>
                             <% end %>
