@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        user_params = params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :image, :phone)
+        user_params = params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :image, :phone, :avatar_file)
         @user = User.new(user_params)
         # render json:@user.to_json
         if @user.valid?

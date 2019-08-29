@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_020126) do
     t.string "firstname"
     t.string "lastname"
     t.string "email"
+    t.boolean "avatar"
     t.string "password_digest"
     t.string "confirmation_token"
     t.datetime "created_at", null: false
