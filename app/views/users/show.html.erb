@@ -7,7 +7,7 @@
                         
                         <div class="text-center">
                             <% if @user.avatar %>
-                             <%= image_tag(@user.avatar_url) %>
+                             <%= image_tag(@user.avatar_url, class: 'border rounded-circle')%>
                              <% end %>
                              Firstname <h6><%= @user.firstname %></h6>
                              Lastname <h6><%= @user.lastname %></h6>
