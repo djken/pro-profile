@@ -2,6 +2,7 @@ class User < ApplicationRecord
     attr_accessor :avatar_file
 
     has_one :profile
+
     has_one_attached :image
     
     has_secure_password

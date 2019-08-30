@@ -9,6 +9,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :twitterlink
       t.string :githublink
       t.string :description
+      t.integer :user_id, :on_delete => :cascade
       t.timestamps
     end
   end

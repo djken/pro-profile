@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
 
     end
 
+    private
     def profile_params
         params.require(:profile).permit(:phone, :profession, :description, :address, :skill, :fabooklink, :twitterlink, :githublink)
     end
