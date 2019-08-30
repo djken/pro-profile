@@ -8,9 +8,35 @@
 
 .bg-black {
     background: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
 }
 
 .pdg-left {
-    padding-left: 50px;
+    padding-left: 70px;
 }
 
+.spaceletter{
+    word-spacing: auto;
+    font-weight: normal;
+  }
+
+  .bg-card {
+      background: rgb(238, 213, 213);
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
+.fit-size  {
+    font-size: 18px;
+}
+
+.form-bg {
+    background: url('https://i.imgur.com/2duyost.jpg') center;
+    background-blend-mode: screen multiply;
+    opacity: 3px;
+}
+
+.opac {
+    opacity: 0.7;
+}

@@ -1,0 +1,31 @@
+<section class="container mt-4">
+        <div class="row">
+            <div class=" col-lg-10">
+                <div class="col-md-8 mb-3">
+                <% @users.each do |user| %>                    
+                    <div class="rounded mb-4 border">
+                        <div class="d-flex col-lg-8 ">
+                            <div class="p-0 w-auto">
+                                <%= image_tag(user.avatar_url, class: 'rounded') %>
+                            </div>
+                            <div class="pl-3 pt-2">
+                                        <h5 class="text-primary fit-size"><%= user.firstname %> <%= user.lastname %></h5>
+                                        <h5 class="text-info fit-size"><%= user.email %></h5>
+                                    <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0" >
+                                        <li><a href=""><i class="fab fa-facebook-square"></i> Facebook</li></a>
+                                        <li><a href=""><i class="fab fa-twitter-square"></i> Twitter</li></a>
+                                        <h5 class="fit-size font-weight-normal"><a href="<%= user_path(user) %> "><i class="fa fa-user"></i> View Profile</a></h5>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                <% end %>  
+                </div>
+            </div>
+    
+            <div class="col-lg-2 rounded">
+                
+            </div>
+        </div>
+    </section>
+    
