@@ -1,19 +1,20 @@
-body{
-    background: -webkit-linear-gradient(left, #cbc9eb, #aedae6);
-}
+// body{
+//     background: -webkit-linear-gradient(left, #e5e4f3, #d7e6eb);
+// }
 .emp-profile{
     padding: 3%;
     // margin-top: 1%;
     margin-bottom: 3%;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
+    
     background: #fff;
 }
 .profile-img{
-    text-align: center;
+    text-align: left;
 }
 .profile-img img{
-    width: 70%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
 }
 .profile-img .file {
     position: relative;
@@ -39,12 +40,23 @@ body{
 }
 .profile-edit-btn{
     border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
+    // border-radius: 1.5rem;
+    width: auto;
+    padding: 14px;
     font-weight: 600;
-    color: #6c757d;
+    color: #fff;
     cursor: pointer;
+    background-color: rgb(185, 224, 140);
+}
+
+.btn-edit-middle {
+    // margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 4px;
+    
 }
 .proile-rating{
     font-size: 12px;
@@ -94,6 +106,6 @@ body{
     color: #0062cc;
 }
 
-.textarea {
-    height: 150px;
-  }
+.font-btn{
+    font-size: 14px;
+}

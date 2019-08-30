@@ -1,0 +1,28 @@
+<div class="container emp-profile card-header  card-body  font-weight-bold">
+        <div class="row">
+            <div class=" col-lg-12 card py-2 text-center font-weight-bold">Registration</div>
+            <div class="col-lg-4">
+                <%= bootstrap_form_for @profile do |form| %>
+                <div class="profile-head pt-2">
+                    <%= form.text_field :address, hide_label: true, placeholder: 'Address', class: 'text-left form-control' %>
+                    <%= form.text_field :profession, hide_label: true, placeholder: 'Profession', class: 'text-left font-weight-normal' %>
+                    <%= form.text_field :phone, hide_label: true, placeholder: 'Phone', class: 'text-left font-weight-normal' %>
+                </div>
+            </div>
+
+         <div class="col-lg-4 text-center pt-2">
+                <%= form.url_field :githublink, hide_label: true, placeholder: 'Paste your Github repo url ...', class: 'text-left form-control' %>
+                <%= form.url_field :fabooklink, hide_label: true, placeholder: 'Paste your Facebook url ...', class: 'text-left form-control' %>
+                <%= form.url_field :twitterlink, hide_label: true, placeholder: 'Paste your Twitter url ...', class: 'text-left form-control' %>
+        </div>
+
+        <div class="col-lg-4 mt-2">
+                <%= form.text_area :skill, hide_label: true, placeholder: 'Add Your Skills...', class: 'text-left form-control', :rows => 'stretch' %>
+                <%= form.text_area :description, hide_label: true, placeholder: 'Write something about you ...', class: 'text-left form-control', :rows => 10 %>
+        </div>
+    </div> 
+    <div class="col-lg-12  text-center"><%= form.primary "Register" %></div>
+    <% end %>
+</div> 
+    
+    

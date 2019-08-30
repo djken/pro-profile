@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     before_action :only_signed_in
+    skip_before_action :only_signed_in, only: [:index]
     add_flash_types :success, :danger
     helper_method :current_user, :user_signed_in?
 
@@ -8,12 +9,12 @@ class ApplicationController < ActionController::Base
 
     def only_signed_in
         if !user_signed_in?
-            redirect_to  new_user_path, danger: 'You do not have right to connect!'
+            # redirect_to  new_user_path, danger: 'You do not have right to connect!'
         end
     end
 
     def only_signed_out
-        redirect_to profile_path if user_signed_in?
+        redirect_to users_path if user_signed_in?
     end
 
     def user_signed_in?
