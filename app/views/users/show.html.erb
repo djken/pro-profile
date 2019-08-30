@@ -1,30 +1,21 @@
 <div class=" col-lg-12 card py-2 text-center font-weight-bold"> <%= @user.lastname %> </div>
-
 <div class="container emp-profile  card-body card-header font-weight-bold pt-4">
             <div class="row pt-1">
-
-                <div class="col-md-2 img-fluid border d-flex justify-content-center align-items-center">
-                        
-                        <div class="text-center">
+                <div class="col-lg-3 img-fluid justify-content-center align-items-center mx-auto">
+                        <div class="text-center col-sm-12">
                             <% if @user.avatar %>
                              <%= image_tag(@user.avatar_url, class: 'border rounded-circle')%>
                              <% end %>
-                             Firstname <h6><%= @user.firstname %></h6>
-                             Lastname <h6><%= @user.lastname %></h6>
-                             Email <h6><%= @user.email %></h6>
-                             Phone  <h6><%= @user.profile.phone %></h6>
-
-
-                        </div>
-                        
-                     
-                            <%#= image_tag(@user.image) %>
-                            <%#= image_tag (@user.image) %>
-                            <%#= image_tag @user.image.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'}) %>
+                            </div>
+                            <div class="text-center">
+                                Firstname <h6 class="text-break"><%= @user.firstname %></h6>
+                                Lastname <h6 class="text-break"><%= @user.lastname %></h6>
+                                Email <a href=""><h6 class="text-break"><%= @user.email %></h6></a>
+                                Phone  <h6><%= @user.profile.phone %></h6>
+                            </div>
                 </div>
-
-                <div class="col-md-4 text-center">
-                    <div class="profile-img text-center border-right">
+                <div class="col-lg-4 text-center border">
+                    <div class="profile-img text-center">
                     <div class="profile-head w-2 font-weight-normal">
                          Address <h6><%= @user.profile.address %></h6> <hr>
                          Profession  <h6><%= @user.profile.profession %></h6> <hr>
@@ -36,19 +27,15 @@
                         <h6 class="mt-0">Twitter</h6><a href="<%= @user.profile.twitterlink %>">Follow on Twitter</a> <hr>
                     </div>
                 </div>
-                <div class="col-md-6">
-                   
-                    
-                    <br>
-                    <div class="profile-head border rounded text-center">
+                <div class="col-lg-5">
+                    <div class="profile-head border rounded border-right-0 border-left-0 text-center">
                             <u><h6>List Your Skills</h6></u>
                             <div class="card-body card text-justify spaceletter p-2">
                                 <%= @user.profile.skill %>
                             </div>
-                    </div>
-                    <br>
-                    
-                    <div class="profile-head border rounded text-center">
+                    </div>                   
+                    <br> 
+                    <div class="profile-head border rounded border-right-0 border-left-0 text-center">
                             <u><h6>Description</h6></u>
                             <div class="card-body card text-justify spaceletter p-2">
                                 <%= @user.profile.description %>
@@ -58,8 +45,11 @@
                     
                     <div class="col-md text-center btn-edit-middle">
                             <% if @user.profile && current_user && @user.id == current_user.id %>
-                            <%= link_to 'Edit Profile', edit_profile_path(@user.profile), class: "profile-edit-btn col-sm-12" %>
+                            <%= link_to 'Edit', edit_profile_path(@user.profile), class: "bg-success mt-2 btn icon-ok icon-white" %>
                             <% end %>
                     </div>
             </div>
     </div>
+
+
+   

@@ -17,8 +17,8 @@
         </div>
 
         <div class="col-lg-4 mt-2">
-                <%= form.text_field :skill, hide_label: true, placeholder: 'Add Your Skills...', class: 'text-left form-control' %>
-                <%= form.text_area :description, hide_label: true, placeholder: 'Write something about you ...', class: 'text-left form-control' %>
+                <%= form.text_area :skill, hide_label: true, placeholder: 'Add Your Skills...', class: 'text-left form-control', :rows => 'stretch' %>
+                <%= form.text_area :description, hide_label: true, placeholder: 'Write something about you ...', class: 'text-left form-control', :rows => 10 %>
         </div>
     </div> 
     <div class="col-lg-12  text-center"><%= form.primary "Register" %></div>
