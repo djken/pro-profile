@@ -33,4 +33,10 @@
 
 .form-bg {
     background: url('https://i.imgur.com/2duyost.jpg') center;
+    background-blend-mode: screen multiply;
+    opacity: 3px;
+}
+
+.opac {
+    opacity: 0.7;
 }
