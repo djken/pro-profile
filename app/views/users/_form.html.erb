@@ -1,7 +1,13 @@
-<div class="container emp-profile card-header  card-body  font-weight-bold">
-        <div class="row">
-            <div class=" col-lg-12 card py-2 text-center font-weight-bold">Registration</div>
-            <div class="col-lg-4">
+<div class="container emp-profile card-header card-body font-weight-bold form-bg border-top-0 rounded-bottom">
+        <div class="row" >
+            <!-- <div class=" col-lg-12 card py-2 text-center font-weight-bold">Registration</div> -->
+            
+            <div class="col-lg-4 text-center">
+
+            </div>
+            <div class="col-lg-4 mt-2">
+            </div>
+            <div class="col-lg-4 border border-success rounded">
                 <%= form_for @user do |form| %>
                 <div class="profile-head pt-4">
 
@@ -16,15 +22,11 @@
                     <%= form.password_field :password, hide_label: true, placeholder: 'Password', class: 'text-left form-control' %> <br>
                     
                     <%= form.password_field :password_confirmation, hide_label: true, placeholder: 'Confirm Password', class: 'text-left form-control' %> <br>
-                    <%= form.file_field :avatar_file, hide_label: true, class: 'text-left' %> <br>
+                    <%= form.file_field :avatar_file, hide_label: true, class: 'text-left border rounded' %> <br>
+                    
+                    <div class="col-lg-12  text-center p-4"><%= form.submit "Register" %></div>
                 </div>
-            </div>
-            <div class="col-lg-4 text-center">
-
-            </div>
-        <div class="col-lg-4 mt-2">
-        </div>
+             </div>
     </div> 
-    <div class="col-lg-12  text-center"><%= form.submit "Register" %></div>
     <% end %>
 </div> 
